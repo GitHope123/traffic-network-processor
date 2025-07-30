@@ -1,0 +1,278 @@
+2025-07-23 19:51:32,440 - INFO - 🚀 Inicializando SparkSession OPTIMIZADA...
+2025-07-23 19:51:36,154 - INFO - ✅ SparkSession OPTIMIZADA inicializada correctamente v.2.0
+2025-07-23 19:51:36,155 - INFO - ================================================================================
+2025-07-23 19:51:36,155 - INFO - 🚀 INICIANDO PROCESAMIENTO OPTIMIZADO PARA POWER BI
+2025-07-23 19:51:36,155 - INFO - ================================================================================
+2025-07-23 19:51:36,156 - INFO - 📂 Cargando datos desde: /data/raw/network_data.csv
+2025-07-23 19:52:37,885 - INFO - 🧹 Limpiando nombres de columnas...
+2025-07-23 19:52:39,161 - INFO - 🔄 Particiones originales: 1
+2025-07-23 19:54:39,468 - INFO - ✅ Datos cargados exitosamente:
+2025-07-23 19:54:39,469 - INFO -    📊 Registros: 2,830,736
+2025-07-23 19:54:39,469 - INFO -    📋 Columnas: 79
+2025-07-23 19:54:39,492 - INFO -    🔄 Particiones finales: 4
+2025-07-23 19:54:39,493 - INFO - 🔧 Iniciando limpieza y enriquecimiento de datos OPTIMIZADO...
+2025-07-23 19:54:39,493 - INFO - 📝 Renombrando columnas...
+2025-07-23 19:54:39,586 - INFO -    ✓ Destination Port → destination_port
+2025-07-23 19:54:39,606 - INFO -    ✓ Flow Duration → flow_duration
+2025-07-23 19:54:39,648 - INFO -    ✓ Total Fwd Packets → total_fwd_packets
+2025-07-23 19:54:39,679 - INFO -    ✓ Total Backward Packets → total_backward_packets
+2025-07-23 19:54:39,725 - INFO -    ✓ Total Length of Fwd Packets → total_length_of_fwd_packets
+2025-07-23 19:54:39,753 - INFO -    ✓ Total Length of Bwd Packets → total_length_of_bwd_packets
+2025-07-23 19:54:39,783 - INFO -    ✓ Fwd Packet Length Max → fwd_packet_length_max
+2025-07-23 19:54:39,808 - INFO -    ✓ Bwd Packet Length Max → bwd_packet_length_max
+2025-07-23 19:54:39,833 - INFO -    ✓ Flow Bytes/s → flow_bytes_per_sec
+2025-07-23 19:54:39,861 - INFO -    ✓ Flow Packets/s → flow_packets_per_sec
+2025-07-23 19:54:39,887 - INFO -    ✓ Flow IAT Mean → flow_iat_mean
+2025-07-23 19:54:39,917 - INFO -    ✓ Fwd IAT Mean → fwd_iat_mean
+2025-07-23 19:54:39,945 - INFO -    ✓ Bwd IAT Mean → bwd_iat_mean
+2025-07-23 19:54:39,976 - INFO -    ✓ Fwd Header Length → fwd_header_length
+2025-07-23 19:54:40,003 - INFO -    ✓ Label → label
+2025-07-23 19:54:40,004 - INFO - 🧹 Aplicando limpieza de datos...
+2025-07-23 19:54:41,069 - INFO - 📊 Calculando métricas derivadas...
+2025-07-23 19:54:41,471 - INFO - 🏷️  Aplicando categorización...
+2025-07-23 19:54:41,622 - INFO - 🚩 Generando flags de análisis...
+2025-07-23 19:59:22,014 - INFO - ✅ Procesamiento completado:
+2025-07-23 19:59:22,019 - INFO -    📊 Registros procesados: 2,830,736
+2025-07-23 19:59:22,024 - INFO -    🏷️  Columnas finales: 92
+2025-07-23 19:59:41,632 - INFO -    🎯 Distribución de amenazas:
+2025-07-23 19:59:41,657 - INFO -      - HIGH: 3,473
+2025-07-23 19:59:41,844 - INFO -      - MEDIUM: 173,449
+2025-07-23 19:59:41,863 - INFO -      - NONE: 2,273,090
+2025-07-23 19:59:42,070 - INFO -      - CRITICAL: 380,724
+2025-07-23 19:59:42,097 - INFO - 💾 Guardando archivo Parquet (método simplificado)...
+2025-07-23 19:59:42,429 - INFO - 📋 Columnas seleccionadas: 20
+2025-07-23 19:59:42,530 - INFO - 🔄 Método 1: Convertir a Pandas y usar DuckDB...
+2025-07-23 20:11:36,392 - INFO - ✅ Convertido a Pandas: 2,830,736 registros
+2025-07-23 20:12:09,762 - INFO - ✅ Archivo Parquet creado exitosamente:
+2025-07-23 20:12:09,763 - INFO -    📁 Ubicación: /output/network_traffic_powerbi.parquet
+2025-07-23 20:12:09,763 - INFO -    📊 Registros: 2,830,736
+2025-07-23 20:12:09,764 - INFO -    📋 Columnas: 20
+2025-07-23 20:12:09,764 - INFO -    💾 Tamaño: 66.41 MB
+2025-07-23 20:12:09,764 - INFO -    🗜️  Compresión: ZSTD
+2025-07-23 20:12:11,081 - INFO - ================================================================================
+2025-07-23 20:12:11,082 - INFO - ✅ PROCESAMIENTO COMPLETADO EXITOSAMENTE
+2025-07-23 20:12:11,082 - INFO - ================================================================================
+2025-07-23 20:12:11,083 - INFO - ⏱️  Tiempo total: 1234.93 segundos
+2025-07-23 20:12:11,084 - INFO - 📁 Archivo: /output/network_traffic_powerbi.parquet
+2025-07-23 20:12:11,084 - INFO - ================================================================================
+2025-07-23 20:12:11,085 - INFO - 🧹 Cerrando SparkSession...
+2025-07-23 20:12:30,600 - INFO - ✅ Recursos liberados
+2025-07-23 20:12:31,258 - INFO - Closing down clientserver connection
+2025-07-23 20:12:49,747 - INFO - 🚀 Inicializando SparkSession OPTIMIZADA...
+2025-07-23 20:13:11,716 - INFO - ✅ SparkSession OPTIMIZADA inicializada correctamente v.2.0
+2025-07-23 20:13:11,717 - INFO - ================================================================================
+2025-07-23 20:13:11,717 - INFO - 🚀 INICIANDO PROCESAMIENTO OPTIMIZADO PARA POWER BI
+2025-07-23 20:13:11,718 - INFO - ================================================================================
+2025-07-23 20:13:11,718 - INFO - 📂 Cargando datos desde: /data/raw/network_data.csv
+2025-07-23 20:15:02,819 - INFO - 🧹 Limpiando nombres de columnas...
+2025-07-23 20:15:04,510 - INFO - 🔄 Particiones originales: 1
+2025-07-23 20:16:28,695 - INFO - ✅ Datos cargados exitosamente:
+2025-07-23 20:16:28,696 - INFO -    📊 Registros: 2,830,736
+2025-07-23 20:16:28,696 - INFO -    📋 Columnas: 79
+2025-07-23 20:16:28,729 - INFO -    🔄 Particiones finales: 4
+2025-07-23 20:16:28,729 - INFO - 🔧 Iniciando limpieza y enriquecimiento de datos OPTIMIZADO...
+2025-07-23 20:16:28,730 - INFO - 📝 Renombrando columnas...
+2025-07-23 20:16:28,759 - INFO -    ✓ Destination Port → destination_port
+2025-07-23 20:16:28,784 - INFO -    ✓ Flow Duration → flow_duration
+2025-07-23 20:16:28,806 - INFO -    ✓ Total Fwd Packets → total_fwd_packets
+2025-07-23 20:16:28,829 - INFO -    ✓ Total Backward Packets → total_backward_packets
+2025-07-23 20:16:28,850 - INFO -    ✓ Total Length of Fwd Packets → total_length_of_fwd_packets
+2025-07-23 20:16:28,870 - INFO -    ✓ Total Length of Bwd Packets → total_length_of_bwd_packets
+2025-07-23 20:16:28,890 - INFO -    ✓ Fwd Packet Length Max → fwd_packet_length_max
+2025-07-23 20:16:28,911 - INFO -    ✓ Bwd Packet Length Max → bwd_packet_length_max
+2025-07-23 20:16:28,930 - INFO -    ✓ Flow Bytes/s → flow_bytes_per_sec
+2025-07-23 20:16:28,957 - INFO -    ✓ Flow Packets/s → flow_packets_per_sec
+2025-07-23 20:16:28,983 - INFO -    ✓ Flow IAT Mean → flow_iat_mean
+2025-07-23 20:16:29,004 - INFO -    ✓ Fwd IAT Mean → fwd_iat_mean
+2025-07-23 20:16:29,022 - INFO -    ✓ Bwd IAT Mean → bwd_iat_mean
+2025-07-23 20:16:29,041 - INFO -    ✓ Fwd Header Length → fwd_header_length
+2025-07-23 20:16:29,058 - INFO -    ✓ Label → label
+2025-07-23 20:16:29,059 - INFO - 🧹 Aplicando limpieza de datos...
+2025-07-23 20:16:29,240 - INFO - 📊 Calculando métricas derivadas...
+2025-07-23 20:16:30,436 - INFO - 🏷️  Aplicando categorización...
+2025-07-23 20:16:30,593 - INFO - 🚩 Generando flags de análisis...
+2025-07-23 20:17:09,362 - INFO - ✅ Procesamiento completado:
+2025-07-23 20:17:09,365 - INFO -    📊 Registros procesados: 2,830,736
+2025-07-23 20:17:09,368 - INFO -    🏷️  Columnas finales: 92
+2025-07-23 20:17:11,141 - INFO -    🎯 Distribución de amenazas:
+2025-07-23 20:17:11,142 - INFO -      - HIGH: 3,473
+2025-07-23 20:17:11,142 - INFO -      - MEDIUM: 173,449
+2025-07-23 20:17:11,142 - INFO -      - NONE: 2,273,090
+2025-07-23 20:17:11,143 - INFO -      - CRITICAL: 380,724
+2025-07-23 20:17:11,143 - INFO - 💾 Guardando archivo Parquet (método simplificado)...
+2025-07-23 20:17:11,209 - INFO - 📋 Columnas seleccionadas: 20
+2025-07-23 20:17:11,209 - INFO - 🔄 Método 1: Convertir a Pandas y usar DuckDB...
+2025-07-23 20:19:04,987 - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 516, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+2025-07-23 20:19:06,343 - INFO - Closing down clientserver connection
+2025-07-23 20:19:07,097 - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 516, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-07-23 20:19:07,774 - INFO - Closing down clientserver connection
+2025-07-23 20:19:51,285 - INFO - ✅ Convertido a Pandas: 2,830,736 registros
+2025-07-23 20:20:06,313 - INFO - ✅ Archivo Parquet creado exitosamente:
+2025-07-23 20:20:06,314 - INFO -    📁 Ubicación: /output/network_traffic_powerbi.parquet
+2025-07-23 20:20:06,314 - INFO -    📊 Registros: 2,830,736
+2025-07-23 20:20:06,314 - INFO -    📋 Columnas: 20
+2025-07-23 20:20:06,314 - INFO -    💾 Tamaño: 66.41 MB
+2025-07-23 20:20:06,315 - INFO -    🗜️  Compresión: ZSTD
+2025-07-23 20:20:07,499 - INFO - ================================================================================
+2025-07-23 20:20:07,500 - INFO - ✅ PROCESAMIENTO COMPLETADO EXITOSAMENTE
+2025-07-23 20:20:07,500 - INFO - ================================================================================
+2025-07-23 20:20:07,501 - INFO - ⏱️  Tiempo total: 415.78 segundos
+2025-07-23 20:20:07,502 - INFO - 📁 Archivo: /output/network_traffic_powerbi.parquet
+2025-07-23 20:20:07,502 - INFO - ================================================================================
+2025-07-23 20:20:07,503 - INFO - 🧹 Cerrando SparkSession...
+2025-07-23 20:20:07,528 - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 516, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+2025-07-23 20:20:07,529 - INFO - Closing down clientserver connection
+2025-07-23 20:20:07,529 - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 516, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-07-23 20:20:07,530 - INFO - Closing down clientserver connection
+2025-07-23 20:20:07,917 - INFO - Closing down clientserver connection
+2025-07-23 20:20:09,662 - INFO - Closing down clientserver connection
+2025-07-23 20:20:09,663 - INFO - Closing down clientserver connection
+2025-07-23 20:20:11,005 - INFO - Closing down clientserver connection
+2025-07-23 20:20:36,651 - INFO - 🚀 Inicializando SparkSession OPTIMIZADA...
+2025-07-23 20:21:01,987 - INFO - ✅ SparkSession OPTIMIZADA inicializada correctamente v.2.0
+2025-07-23 20:21:01,988 - INFO - ================================================================================
+2025-07-23 20:21:01,988 - INFO - 🚀 INICIANDO PROCESAMIENTO OPTIMIZADO PARA POWER BI
+2025-07-23 20:21:01,989 - INFO - ================================================================================
+2025-07-23 20:21:01,990 - INFO - 📂 Cargando datos desde: /data/raw/network_data.csv
+2025-07-23 22:29:45,515 - INFO - 🚀 Inicializando SparkSession OPTIMIZADA...
+2025-07-23 22:30:54,866 - INFO - ✅ SparkSession OPTIMIZADA inicializada correctamente v.2.0
+2025-07-23 22:30:54,867 - INFO - ================================================================================
+2025-07-23 22:30:54,868 - INFO - 🚀 INICIANDO PROCESAMIENTO OPTIMIZADO PARA POWER BI
+2025-07-23 22:30:54,868 - INFO - ================================================================================
+2025-07-23 22:30:54,868 - INFO - 📂 Cargando datos desde: /data/raw/network_data.csv
+2025-07-23 22:32:13,758 - INFO - 🧹 Limpiando nombres de columnas...
+2025-07-23 22:32:18,788 - INFO - 🔄 Particiones originales: 1
+2025-07-23 22:34:24,020 - INFO - 🚀 Inicializando SparkSession OPTIMIZADA...
+2025-07-23 22:34:31,223 - INFO - ✅ SparkSession OPTIMIZADA inicializada correctamente v.2.0
+2025-07-23 22:34:31,224 - INFO - ================================================================================
+2025-07-23 22:34:31,224 - INFO - 🚀 INICIANDO PROCESAMIENTO OPTIMIZADO PARA POWER BI
+2025-07-23 22:34:31,225 - INFO - ================================================================================
+2025-07-23 22:34:31,225 - INFO - 📂 Cargando datos desde: /data/raw/network_data.csv
+2025-07-23 22:39:25,207 - INFO - 🧹 Limpiando nombres de columnas...
+2025-07-23 22:39:26,421 - INFO - 🔄 Particiones originales: 1
+2025-07-23 22:47:54,389 - INFO - ✅ Datos cargados exitosamente:
+2025-07-23 22:47:55,482 - INFO -    📊 Registros: 2,830,736
+2025-07-23 22:47:55,483 - INFO -    📋 Columnas: 79
+2025-07-23 22:48:00,023 - INFO -    🔄 Particiones finales: 4
+2025-07-23 22:48:00,149 - INFO - 🔧 Iniciando limpieza y enriquecimiento de datos OPTIMIZADO...
+2025-07-23 22:48:00,308 - INFO - 📝 Renombrando columnas...
+2025-07-23 22:48:06,254 - INFO -    ✓ Destination Port → destination_port
+2025-07-23 22:48:06,298 - INFO -    ✓ Flow Duration → flow_duration
+2025-07-23 22:48:06,370 - INFO -    ✓ Total Fwd Packets → total_fwd_packets
+2025-07-23 22:48:07,060 - INFO -    ✓ Total Backward Packets → total_backward_packets
+2025-07-23 22:48:07,184 - INFO -    ✓ Total Length of Fwd Packets → total_length_of_fwd_packets
+2025-07-23 22:48:07,470 - INFO -    ✓ Total Length of Bwd Packets → total_length_of_bwd_packets
+2025-07-23 22:48:07,492 - INFO -    ✓ Fwd Packet Length Max → fwd_packet_length_max
+2025-07-23 22:48:07,513 - INFO -    ✓ Bwd Packet Length Max → bwd_packet_length_max
+2025-07-23 22:48:07,595 - INFO -    ✓ Flow Bytes/s → flow_bytes_per_sec
+2025-07-23 22:48:07,716 - INFO -    ✓ Flow Packets/s → flow_packets_per_sec
+2025-07-23 22:48:07,868 - INFO -    ✓ Flow IAT Mean → flow_iat_mean
+2025-07-23 22:48:07,891 - INFO -    ✓ Fwd IAT Mean → fwd_iat_mean
+2025-07-23 22:48:07,919 - INFO -    ✓ Bwd IAT Mean → bwd_iat_mean
+2025-07-23 22:48:08,287 - INFO -    ✓ Fwd Header Length → fwd_header_length
+2025-07-23 22:48:08,494 - INFO -    ✓ Label → label
+2025-07-23 22:48:08,503 - INFO - 🧹 Aplicando limpieza de datos...
+2025-07-23 22:48:11,278 - INFO - 📊 Calculando métricas derivadas...
+2025-07-23 22:48:13,608 - INFO - 🏷️  Aplicando categorización...
+2025-07-23 22:48:14,184 - INFO - 🚩 Generando flags de análisis...
+2025-07-23 22:51:13,707 - INFO - ✅ Procesamiento completado:
+2025-07-23 22:51:13,708 - INFO -    📊 Registros procesados: 2,830,736
+2025-07-23 22:51:13,902 - INFO -    🏷️  Columnas finales: 92
+2025-07-23 22:52:05,262 - WARNING -    ⚠️  No se pudo calcular distribución: could not open socket: ["tried to connect to ('127.0.0.1', 39717), but an error occurred: [Errno 111] Connection refused"]
+2025-07-23 22:52:05,530 - INFO - 💾 Guardando archivo Parquet (método simplificado)...
+2025-07-23 22:52:07,350 - INFO - 📋 Columnas seleccionadas: 20
+2025-07-23 22:52:07,350 - INFO - 🔄 Método 1: Convertir a Pandas y usar DuckDB...
+2025-07-23 23:28:47,169 - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 516, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+2025-07-23 23:28:47,779 - INFO - Closing down clientserver connection
+2025-07-23 23:28:48,038 - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 516, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-07-23 23:28:48,180 - INFO - Closing down clientserver connection
+2025-07-23 23:29:59,047 - INFO - ✅ Convertido a Pandas: 2,830,736 registros
+2025-07-23 23:30:30,869 - INFO - ✅ Archivo Parquet creado exitosamente:
+2025-07-23 23:30:30,870 - INFO -    📁 Ubicación: /output/network_traffic_powerbi.parquet
+2025-07-23 23:30:30,870 - INFO -    📊 Registros: 2,830,736
+2025-07-23 23:30:30,871 - INFO -    📋 Columnas: 20
+2025-07-23 23:30:30,871 - INFO -    💾 Tamaño: 66.41 MB
+2025-07-23 23:30:30,871 - INFO -    🗜️  Compresión: ZSTD
+2025-07-23 23:30:32,657 - INFO - ================================================================================
+2025-07-23 23:30:32,658 - INFO - ✅ PROCESAMIENTO COMPLETADO EXITOSAMENTE
+2025-07-23 23:30:32,658 - INFO - ================================================================================
+2025-07-23 23:30:32,659 - INFO - ⏱️  Tiempo total: 3361.43 segundos
+2025-07-23 23:30:32,659 - INFO - 📁 Archivo: /output/network_traffic_powerbi.parquet
+2025-07-23 23:30:32,660 - INFO - ================================================================================
+2025-07-23 23:30:32,660 - INFO - 🧹 Cerrando SparkSession...
+2025-07-23 23:30:32,662 - INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 516, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+2025-07-23 23:30:32,663 - INFO - Closing down clientserver connection
+2025-07-23 23:30:32,664 - ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 516, in send_command
+    raise Py4JNetworkError("Answer from Java side is empty")
+py4j.protocol.Py4JNetworkError: Answer from Java side is empty
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/usr/local/lib/python3.9/dist-packages/py4j/clientserver.py", line 539, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+2025-07-23 23:30:32,664 - INFO - Closing down clientserver connection
+2025-07-23 23:30:33,207 - INFO - Closing down clientserver connection
+2025-07-23 23:30:34,369 - INFO - Closing down clientserver connection
+2025-07-23 23:30:34,370 - INFO - Closing down clientserver connection
+2025-07-23 23:30:38,813 - INFO - Closing down clientserver connection

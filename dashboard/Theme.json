@@ -1,0 +1,84 @@
+﻿{
+  "name": "Big Data Terra Pro",
+  "dataColors": [
+    "#F4511E", "#8BC34A", "#FFB300", "#6D4C41", "#C2185B",
+    "#009688", "#D32F2F", "#FDD835", "#5D4037", "#FF7043",
+    "#9CCC65", "#FFD54F", "#7E57C2", "#A1887F", "#C0CA33"
+  ],
+  "background": "#1E1E1E",
+  "foreground": "#FAFAFA",
+  "foregroundNeutralSecondary": "#BDBDBD",
+  "foregroundNeutralTertiary": "#9E9E9E",
+  "backgroundLight": "#2C2C2C",
+  "backgroundNeutral": "#424242",
+  "tableAccent": "#F4511E",
+  "maximum": "#8BC34A",
+  "center": "#FFB300",
+  "minimum": "#C2185B",
+  "bad": "#D32F2F",
+  "neutral": "#FFC107",
+  "good": "#388E3C",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#1E1E1E"
+              }
+            }
+          }
+        ],
+        "visualHeader": [
+          {
+            "foreground": "#FAFAFA"
+          }
+        ],
+        "visualTooltip": [
+          {
+            "themedBackground": {
+              "solid": {
+                "color": "#2C2C2C"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#121212"
+              }
+            }
+          }
+        ],
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#1E1E1E"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    }
+  },
+  "textClasses": {
+    "label": {
+      "color": "#E0E0E0"
+    },
+    "callout": {
+      "color": "#FFFFFF"
+    },
+    "title": {
+      "color": "#FFFFFF"
+    }
+  }
+}

@@ -1,0 +1,143 @@
+version: '3.8'
+services:
+  network-processor:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: network-traffic-processor
+    volumes:
+      - ../data:/data:ro
+      - ../output:/output
+      - ../logs:/app/logs
+      - ../notebooks:/app/notebooks
+    environment:
+      # === CONFIGURACIÓN DE MEMORIA AUMENTADA ===
+      - SPARK_DRIVER_MEMORY=6g
+      - SPARK_EXECUTOR_MEMORY=6g
+      - SPARK_DRIVER_MAX_RESULT_SIZE=2g
+      
+      # === CONFIGURACIONES ADICIONALES DE SPARK ===
+      - SPARK_SQL_ADAPTIVE_ENABLED=true
+      - SPARK_SQL_ADAPTIVE_COALESCE_PARTITIONS_ENABLED=true
+      - SPARK_SERIALIZER=org.apache.spark.serializer.KryoSerializer
+      
+      # === CONFIGURACIONES DE ARROW (CRÍTICO) ===
+      - SPARK_SQL_EXECUTION_ARROW_PYSPARK_ENABLED=false
+      - SPARK_SQL_EXECUTION_ARROW_PYSPARK_FALLBACK_ENABLED=true
+      
+      # === CONFIGURACIONES DE PARTICIONADO ===
+      - SPARK_SQL_SHUFFLE_PARTITIONS=200
+      - SPARK_SQL_ADAPTIVE_ADVISORY_PARTITION_SIZE_IN_BYTES=67108864
+      
+      # === CONFIGURACIONES DE JAVA ===
+      - JAVA_OPTS=-Xmx8g -XX:+UseG1GC -XX:MaxGCPauseMillis=200
+      - PYSPARK_DRIVER_PYTHON=python3
+      - PYSPARK_PYTHON=python3
+      - PYTHONUNBUFFERED=1
+      
+      # === CONFIGURACIONES DE SEGURIDAD DE MEMORIA ===
+      - SPARK_DRIVER_MEMORY_FRACTION=0.8
+      - SPARK_EXECUTOR_MEMORY_FRACTION=0.8
+      - SPARK_STORAGE_MEMORY_FRACTION=0.5
+      
+    # === LÍMITES DE RECURSOS AUMENTADOS ===
+    mem_limit: 10g
+    cpus: 4.0
+    
+    # === CONFIGURACIONES DE MEMORIA SWAP ===
+    memswap_limit: 12g
+    
+    stdin_open: true
+    tty: true
+    
+    # === CONFIGURACIONES DE REINICIO ===
+    restart: unless-stopped
+    
+    networks:
+      - spark-network
+    
+    # === HEALTHCHECK ===
+    healthcheck:
+      test: ["CMD", "python3", "-c", "import pyspark; print('Spark OK')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  jupyter:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: jupyter-spark
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../data:/data:ro
+      - ../output:/output
+      - ../notebooks:/app/notebooks
+      - ../logs:/app/logs
+    environment:
+      # === CONFIGURACIÓN DE MEMORIA PARA JUPYTER ===
+      - SPARK_DRIVER_MEMORY=4g
+      - SPARK_EXECUTOR_MEMORY=4g
+      - SPARK_DRIVER_MAX_RESULT_SIZE=1g
+      
+      # === CONFIGURACIONES DE JUPYTER ===
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_PORT=8888
+      - JUPYTER_IP=0.0.0.0
+      
+      # === CONFIGURACIONES DE SPARK PARA JUPYTER ===
+      - SPARK_SQL_EXECUTION_ARROW_PYSPARK_ENABLED=false
+      - PYTHONUNBUFFERED=1
+      
+    command: >
+      bash -c "
+        pip install jupyter jupyterlab ipywidgets &&
+        jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root 
+        --NotebookApp.token='' --NotebookApp.password=''
+        --ServerApp.allow_origin='*' --ServerApp.allow_remote_access=True
+      "
+    
+    # === LÍMITES DE RECURSOS ===
+    mem_limit: 6g
+    cpus: 2.0
+    
+    networks:
+      - spark-network
+    
+    profiles:
+      - dev
+    
+    # === DEPENDENCIAS ===
+    depends_on:
+      - network-processor
+
+  # === SERVICIO DE MONITOREO (OPCIONAL) ===
+  spark-ui:
+    image: nginx:alpine
+    container_name: spark-ui-proxy
+    ports:
+      - "4040:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - spark-network
+    profiles:
+      - monitoring
+    depends_on:
+      - network-processor
+
+networks:
+  spark-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+
+# === VOLÚMENES NOMBRADOS (OPCIONAL) ===
+volumes:
+  spark_logs:
+    driver: local
+  output_data:
+    driver: local
