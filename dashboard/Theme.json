@@ -1,23 +1,24 @@
 ﻿{
-  "name": "Big Data Terra Pro",
+  "name": "Big Data Terra Pro v2",
   "dataColors": [
-    "#F4511E", "#8BC34A", "#FFB300", "#6D4C41", "#C2185B",
-    "#009688", "#D32F2F", "#FDD835", "#5D4037", "#FF7043",
-    "#9CCC65", "#FFD54F", "#7E57C2", "#A1887F", "#C0CA33"
+    "#00BFA5", "#FF6F00", "#C62828", "#4A148C", "#0277BD",
+    "#F9A825", "#2E7D32", "#E64A19", "#6D4C41", "#00838F",
+    "#EF5350", "#8E24AA", "#3949AB", "#00ACC1", "#FDD835",
+    "#43A047", "#FB8C00", "#1E88E5", "#AB47BC", "#9E9D24"
   ],
-  "background": "#1E1E1E",
-  "foreground": "#FAFAFA",
-  "foregroundNeutralSecondary": "#BDBDBD",
-  "foregroundNeutralTertiary": "#9E9E9E",
-  "backgroundLight": "#2C2C2C",
-  "backgroundNeutral": "#424242",
-  "tableAccent": "#F4511E",
-  "maximum": "#8BC34A",
-  "center": "#FFB300",
-  "minimum": "#C2185B",
-  "bad": "#D32F2F",
-  "neutral": "#FFC107",
-  "good": "#388E3C",
+  "background": "#1B1B1B",
+  "foreground": "#FFFFFF",
+  "foregroundNeutralSecondary": "#B0BEC5",
+  "foregroundNeutralTertiary": "#90A4AE",
+  "backgroundLight": "#252525",
+  "backgroundNeutral": "#37474F",
+  "tableAccent": "#00BFA5",
+  "maximum": "#2E7D32",
+  "center": "#F9A825",
+  "minimum": "#C62828",
+  "bad": "#D50000",
+  "neutral": "#FDD835",
+  "good": "#00C853",
   "visualStyles": {
     "*": {
       "*": {
@@ -25,21 +26,21 @@
           {
             "color": {
               "solid": {
-                "color": "#1E1E1E"
+                "color": "#1B1B1B"
               }
             }
           }
         ],
         "visualHeader": [
           {
-            "foreground": "#FAFAFA"
+            "foreground": "#ECEFF1"
           }
         ],
         "visualTooltip": [
           {
             "themedBackground": {
               "solid": {
-                "color": "#2C2C2C"
+                "color": "#263238"
               }
             }
           }
@@ -61,7 +62,7 @@
           {
             "color": {
               "solid": {
-                "color": "#1E1E1E"
+                "color": "#1B1B1B"
               }
             },
             "transparency": 0
@@ -72,7 +73,7 @@
   },
   "textClasses": {
     "label": {
-      "color": "#E0E0E0"
+      "color": "#CFD8DC"
     },
     "callout": {
       "color": "#FFFFFF"
