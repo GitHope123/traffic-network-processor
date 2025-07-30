@@ -352,12 +352,3 @@ file output/network_traffic_powerbi.parquet
 # Verificar logs por errores
 tail -n 100 logs/processing.log | grep -i error
 ```
-
-### 📞 Obtener Ayuda
-
-- 🐛 **Reportar Bugs**: [GitHub Issues](https://github.com/GitHope123/traffic-network-processor/issues)
-- 📖 **Documentación**: [Wiki del Proyecto](https://github.com/GitHope123/traffic-network-processor/wiki)
-- 💬 **Discusiones**: [GitHub Discussions](https://github.com/GitHope123/traffic-network-processor/discussions)
-
----
-
