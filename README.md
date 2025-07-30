@@ -7,17 +7,21 @@
 
 Sistema avanzado de análisis de tráfico de red que procesa **2.8M+ flujos de red** para generar archivos Parquet optimizados para Power BI, con capacidades de detección de amenazas y análisis de comportamiento en tiempo real.
 
+---
+
 ## 📋 Tabla de Contenidos
 
-- [🏗️ Estructura del Proyecto](#-estructura-del-proyecto)
-- [⚙️ Requisitos del Sistema](#-requisitos-del-sistema)
+- [🏗️ Estructura del Proyecto](#️-estructura-del-proyecto)
+- [⚙️ Requisitos del Sistema](#️-requisitos-del-sistema)
 - [🚀 Instalación y Configuración](#-instalación-y-configuración)
 - [💻 Uso del Sistema](#-uso-del-sistema)
 - [📊 Características del Dataset](#-características-del-dataset)
 - [📈 Análisis de Resultados](#-análisis-de-resultados)
 - [🎯 Configuración del Dashboard](#-configuración-del-dashboard)
 - [🔧 Mantenimiento](#-mantenimiento)
-- [🛠️ Solución de Problemas](#-solución-de-problemas)
+- [🛠️ Solución de Problemas](#️-solución-de-problemas)
+
+---
 
 ## 🏗️ Estructura del Proyecto
 
@@ -54,6 +58,8 @@ traffic-network-processor/
 └── requirements.txt                # Dependencias de Python
 ```
 
+---
+
 ## ⚙️ Requisitos del Sistema
 
 ### 🖥️ Hardware Mínimo
@@ -66,6 +72,8 @@ traffic-network-processor/
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (v4.0+)
 - [Git](https://git-scm.com/) para clonación del repositorio
 - [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (opcional, para dashboards)
+
+---
 
 ## 🚀 Instalación y Configuración
 
@@ -100,7 +108,32 @@ pip install -r requirements.txt
 python src/main.py
 ```
 
+---
+
 ## 💻 Uso del Sistema
+
+### 📥 Descarga del Dataset
+
+Para descargar directamente el archivo `network_data.csv` en `data/raw/` sin crear subcarpetas adicionales, ejecuta el siguiente script desde PowerShell:
+
+```powershell
+cd data/raw
+.\descargar_datos.bat
+```
+
+**¿Qué hace este script?**
+
+Este script realiza las siguientes acciones:
+
+1. ✅ Verifica si Python está instalado en tu sistema
+2. 🔍 Verifica si `gdown` está disponible; si no lo está, lo instala automáticamente
+3. ⬇️ Utiliza `gdown` para descargar el archivo desde Google Drive
+4. 💾 Guarda el archivo directamente en la carpeta `data/raw/` como `network_data.csv`
+
+> **Nota**: Si al ejecutar el script aparece un mensaje de error relacionado con permisos de ejecución, abre PowerShell como administrador y ejecuta:
+> ```powershell
+> Set-ExecutionPolicy RemoteSigned
+> ```
 
 ### 🔄 Procesamiento Automático
 
@@ -128,6 +161,8 @@ jupyter notebook notebooks/Analisis_Exploratorio_BigData.ipynb
 | `processing.log` | Logs detallados del sistema | `logs/` |
 | `dashboard_red.pbix` | Dashboard interactivo | `dashboard/` |
 
+---
+
 ## 📊 Características del Dataset
 
 ### 🔢 Dimensiones Principales
@@ -151,6 +186,8 @@ jupyter notebook notebooks/Analisis_Exploratorio_BigData.ipynb
 │ ⚠️  Alto Riesgo       │   140,337 flujos │  4.96%     │
 └─────────────────────────────────────────────────────────┘
 ```
+
+---
 
 ## 📈 Análisis de Resultados
 
@@ -179,8 +216,8 @@ jupyter notebook notebooks/Analisis_Exploratorio_BigData.ipynb
 
 #### Distribución por Tipo de Flujo
 ```
-Bidireccional: ████████████████████████████████████████ 83.98% (2,377,219)
-Unidireccional: ████████                                16.02% (453,517)
+Bidireccional:      ████████████████████████████████████████ 83.98% (2,377,219)
+Unidireccional:     ████████                                16.02% (453,517)
 ```
 
 #### Distribución por Duración
@@ -199,6 +236,8 @@ Largo (60-300s):    ██████                               14.0% (395,
 | 🟡 **MEDIO** | 292,399 | 10.3% | Anomalías menores detectadas | Revisión periódica |
 | 🟠 **ALTO** | 98,808 | 3.5% | Patrones sospechosos identificados | Investigación requerida |
 | 🔴 **CRÍTICO** | 41,529 | 1.5% | Amenazas confirmadas | Acción inmediata |
+
+---
 
 ## 🎯 Configuración del Dashboard
 
@@ -228,9 +267,11 @@ Largo (60-300s):    ██████                               14.0% (395,
 - 📊 **KPIs de Seguridad**: Métricas de riesgo y alertas
 - 🚀 **Rendimiento de Red**: Latencia, throughput, packet loss
 
+---
+
 ## 🗄️ Estructura de Datos de Salida
 
-El archivo Parquet optimizado contiene:
+El archivo Parquet optimizado contiene las siguientes columnas:
 
 | Campo | Tipo | Descripción | Ejemplo |
 |-------|------|-------------|---------|
@@ -250,6 +291,8 @@ El archivo Parquet optimizado contiene:
 | `duration_category` | string | Categoría temporal | "Medium" |
 | `risk_level` | string | Nivel de riesgo | "LOW" |
 | `label` | string | Clasificación | "BENIGN" |
+
+---
 
 ## 📋 Monitoreo y Logs
 
@@ -275,6 +318,8 @@ grep "Performance" logs/processing.log
 | Registros/segundo | 1,000-1,500 | <500 |
 | Tasa de error | <0.1% | >1% |
 
+---
+
 ## 🔧 Mantenimiento
 
 ### 🔄 Actualización de Datos
@@ -285,7 +330,8 @@ cp nuevo_dataset.csv data/raw/network_data.csv
 docker-compose restart
 
 # Método 2: Script automático
-./data/raw/descargar_datos.bat
+cd data/raw
+./descargar_datos.bat
 ```
 
 ### 🧹 Limpieza del Sistema
@@ -301,12 +347,14 @@ docker system prune -f
 rm -rf tmp/ .cache/
 ```
 
-### 📅 Mantenimiento Programado
+### 📅 Cronograma de Mantenimiento
 
 - **Diario**: Verificación de logs y métricas
 - **Semanal**: Actualización de datos y limpieza
 - **Mensual**: Revisión de rendimiento y optimización
 - **Trimestral**: Actualización de dependencias
+
+---
 
 ## 🛠️ Solución de Problemas
 
@@ -317,7 +365,7 @@ rm -rf tmp/ .cache/
 # Síntoma: "OutOfMemoryError" o container killed
 # Solución:
 docker-compose down
-# Aumentar memoria en Docker Desktop Settings > Resources
+# Ir a Docker Desktop Settings > Resources > Aumentar memoria
 docker-compose up --build
 ```
 
@@ -329,26 +377,84 @@ rm output/network_traffic_powerbi.parquet
 python src/main.py --force-rebuild
 ```
 
-#### 🔄 Dashboard No Actualiza
+#### 🔄 Dashboard No Actualiza Datos
 ```bash
 # Verificar permisos
 chmod 644 output/network_traffic_powerbi.parquet
 
-# Actualizar conexión en Power BI
+# En Power BI:
 # Datos > Configuración de origen de datos > Actualizar
+```
+
+#### 🐳 Container No Inicia
+```bash
+# Verificar puertos en uso
+netstat -tulpn | grep :8080
+
+# Reiniciar Docker
+docker-compose down
+docker system prune -f
+docker-compose up --build
 ```
 
 ### 🆘 Diagnóstico Rápido
 
 ```bash
-# Verificar estado del sistema
+# 1. Verificar estado del sistema
 docker-compose ps
 docker-compose logs app
 
-# Verificar archivos de salida
+# 2. Verificar archivos de salida
 ls -la output/
 file output/network_traffic_powerbi.parquet
 
-# Verificar logs por errores
+# 3. Verificar logs por errores
 tail -n 100 logs/processing.log | grep -i error
+
+# 4. Verificar espacio en disco
+df -h
+
+# 5. Verificar uso de memoria
+free -h
 ```
+
+### 📞 Soporte Adicional
+
+Si los problemas persisten:
+
+1. 📧 Revisa los [Issues](https://github.com/GitHope123/traffic-network-processor/issues) del repositorio
+2. 📝 Crea un nuevo issue con:
+   - Descripción detallada del problema
+   - Logs relevantes
+   - Configuración del sistema
+   - Pasos para reproducir el error
+
+---
+
+## 🎉 Contribuciones
+
+¡Las contribuciones son bienvenidas! Por favor:
+
+1. 🔀 Fork el repositorio
+2. 🌿 Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
+3. 💾 Commit tus cambios (`git commit -am 'Añadir nueva funcionalidad'`)
+4. 📤 Push a la rama (`git push origin feature/nueva-funcionalidad`)
+5. 📋 Abre un Pull Request
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+## 🙏 Agradecimientos
+
+- Apache Spark y DuckDB por las capacidades de procesamiento
+- Microsoft Power BI por las herramientas de visualización
+- La comunidad de código abierto por las librerías utilizadas
+
+---
+
+**Desarrollado con ❤️ para análisis de seguridad de red**
